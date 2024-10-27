@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Add Movie</title>
+</head>
+<body>
+    <form action="/add-movie" method="POST" enctype="multipart/form-data">
+        <h2>Add Movie</h2>
+        <input type="text" name="name" placeholder="Movie Name" required>
+        <input type="text" name="producer" placeholder="Producer" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <input type="date" name="date" required>
+        
+        <label>Screen:</label><br>
+        <input type="radio" name="screen" value="Screen 1" required> Screen 1<br>
+        <input type="radio" name="screen" value="Screen 2"> Screen 2<br>
+        <input type="radio" name="screen" value="Screen 3"> Screen 3<br>
+
+        <input type="file" name="movieFile" accept="video/*" required>
+        <button type="submit">Add Movie</button>
+    </form>
+    <a href="/list-movies">View Movies</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>

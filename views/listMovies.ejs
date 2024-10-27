@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>List Movies</title>
+</head>
+<body>
+    <h2>Movie List</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Producer</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Screen</th>
+            <th>Actions</th>
+        </tr>
+        <% movies.forEach(movie => { %>
+            <tr>
+                <td><%= movie.name %></td>
+                <td><%= movie.producer %></td>
+                <td><%= movie.price %></td>
+                <td><%= movie.date.toDateString() %></td>
+                <td><%= movie.screen %></td>
+                <td>
+                    <form action="/delete-movie/<%= movie._id %>" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+    <a href="/add-movie">Add Movie</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
